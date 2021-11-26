@@ -1,0 +1,227 @@
+<body>
+    <center>
+        <img src="{{href}}" height=600 /> <!-- static/attempt1.svg -->
+        <form method="POST">
+            <label>Input a comma-separated list of features (12)</label>
+            <input name="text"style="height:30px; width:500px;">
+            <input type="submit">
+        </form>
+    </center>
+
+    <h2>Variable Descriptions for Heart Disease Data set</h2>
+
+    <style type="text/css">
+        .tg {
+            border-collapse: collapse;
+            border-color: #ccc;
+            border-spacing: 0;
+            border-style: solid;
+            border-width: 1px;
+        }
+
+        .tg td {
+            background-color: #fff;
+            border-color: #ccc;
+            border-style: solid;
+            border-width: 0px;
+            color: #333;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            overflow: hidden;
+            padding: 10px 5px;
+            word-break: normal;
+        }
+
+        .tg th {
+            background-color: #f0f0f0;
+            border-color: #ccc;
+            border-style: solid;
+            border-width: 0px;
+            color: #333;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            font-weight: normal;
+            overflow: hidden;
+            padding: 10px 5px;
+            word-break: normal;
+        }
+
+        .tg .tg-1wig {
+            font-weight: bold;
+            text-align: left;
+            vertical-align: top
+        }
+
+        .tg .tg-if4e {
+            background-color: #f9f9f9;
+            border-color: inherit;
+            font-weight: bold;
+            text-align: left;
+            vertical-align: top
+        }
+
+        .tg .tg-buh4 {
+            background-color: #f9f9f9;
+            text-align: left;
+            vertical-align: top
+        }
+
+        .tg .tg-txu4 {
+            background-color: #f9f9f9;
+            border-color: inherit;
+            font-style: italic;
+            text-align: left;
+            vertical-align: top
+        }
+
+        .tg .tg-3o7t {
+            background-color: #f9f9f9;
+            font-style: italic;
+            text-align: left;
+            vertical-align: top
+        }
+
+        .tg .tg-fymr {
+            border-color: inherit;
+            font-weight: bold;
+            text-align: left;
+            vertical-align: top
+        }
+
+        .tg .tg-f8tv {
+            border-color: inherit;
+            font-style: italic;
+            text-align: left;
+            vertical-align: top
+        }
+
+        .tg .tg-0pky {
+            border-color: inherit;
+            text-align: left;
+            vertical-align: top
+        }
+
+        .tg .tg-btxf {
+            background-color: #f9f9f9;
+            border-color: inherit;
+            text-align: left;
+            vertical-align: top
+        }
+
+        .tg .tg-8zwo {
+            font-style: italic;
+            text-align: left;
+            vertical-align: top
+        }
+
+        .tg .tg-0lax {
+            text-align: left;
+            vertical-align: top
+        }
+
+        .tg .tg-797t {
+            background-color: #f9f9f9;
+            font-weight: bold;
+            text-align: left;
+            vertical-align: top
+        }
+    </style>
+    <table class="tg">
+        <thead>
+            <tr>
+                <th class="tg-fymr">Variable Name</th>
+                <th class="tg-fymr">Variable Description</th>
+                <th class="tg-fymr">Variable Type</th>
+                <th class="tg-fymr">Variable Range</th>
+                <th class="tg-fymr">Example Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th class="tg-fymr">Age</th>
+                <th class="tg-f8tv">Number of age between 0 to 100</th>
+                <th class="tg-0pky">Continuous</th>
+                <th class="tg-0pky">18</th>
+                <th class="tg-0pky">88.976200</th>
+            </tr>
+            <tr>
+                <td class="tg-if4e">Anaemia</td>
+                <td class="tg-txu4">A deficiency in the number or quality of red blood cells in your body (1 if Deficiency)</td>
+                <td class="tg-btxf">Boolen</td>
+                <td class="tg-btxf"></td>
+                <td class="tg-btxf"></td>
+            </tr>
+            <tr>
+                <td class="tg-fymr">Creatinine Phosphokinase</td>
+                <td class="tg-f8tv">An enzyme in the body. It is found mainly in the heart, brain, and skeletal muscle.</td>
+                <td class="tg-0pky">Continuous</td>
+                <td class="tg-0pky"></td>
+                <td class="tg-0pky"></td>
+            </tr>
+            <tr>
+                <td class="tg-if4e">Diabetes</td>
+                <td class="tg-txu4">A chronic (long-lasting) health condition that affects how your body turns food into energy. (1 if this condition is TRUE)</td>
+                <td class="tg-btxf">Boolen</td>
+                <td class="tg-btxf"></td>
+                <td class="tg-btxf"></td>
+            </tr>
+            <tr>
+                <td class="tg-fymr">Ejection Fraction</td>
+                <td class="tg-f8tv">A measurement, expressed as a percentage, of how much blood the left ventricle pumps out with each contraction.</td>
+                <td class="tg-0pky">Continuous</td>
+                <td class="tg-0pky"></td>
+                <td class="tg-0pky"></td>
+            </tr>
+            <tr>
+                <td class="tg-if4e">High Blood Pressure</td>
+                <td class="tg-txu4">A common condition in which the long-term force of the blood against your artery walls is high enough that it may eventually cause health problems, such as heart disease. (1 if High Blood Pressure)</td>
+                <td class="tg-btxf">Boolen</td>
+                <td class="tg-btxf"></td>
+                <td class="tg-btxf"></td>
+            </tr>
+            <tr>
+                <td class="tg-1wig">Platelets</td>
+                <td class="tg-8zwo">Are colorless blood cells that help blood clot.</td>
+                <td class="tg-0lax">Continuous</td>
+                <td class="tg-0lax"></td>
+                <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+                <td class="tg-797t">Serum Creatinine</td>
+                <td class="tg-3o7t">A blood test done to determine the amount of creatinine present in the blood.</td>
+                <td class="tg-buh4">Continuous</td>
+                <td class="tg-buh4"></td>
+                <td class="tg-buh4"></td>
+            </tr>
+            <tr>
+                <td class="tg-1wig">Serum Sodium</td>
+                <td class="tg-8zwo">The amount of sodium relative to the volume of water in the blood</td>
+                <td class="tg-0lax">Continuous</td>
+                <td class="tg-0lax"></td>
+                <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+                <td class="tg-797t">Sex</td>
+                <td class="tg-3o7t">Gender (if 1 if female)</td>
+                <td class="tg-buh4">Boolen</td>
+                <td class="tg-buh4"></td>
+                <td class="tg-buh4"></td>
+            </tr>
+            <tr>
+                <td class="tg-1wig">Smoking</td>
+                <td class="tg-8zwo">1 if cigeratte</td>
+                <td class="tg-0lax">Boolen</td>
+                <td class="tg-0lax"></td>
+                <td class="tg-0lax"></td>
+            </tr>
+            <tr>
+                <td class="tg-797t">Time</td>
+                <td class="tg-3o7t">Time</td>
+                <td class="tg-0lax">Continuous</td>
+                <td class="tg-0lax"></td>
+                <td class="tg-0lax"></td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>>
