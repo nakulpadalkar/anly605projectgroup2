@@ -76,33 +76,69 @@ def plot_graphs(model, new_input_arr, output_file):
         row=1, col=2
     )
 
-    new_preds = model.predict(new_input_arr)
+    fig.add_trace(go.Scatter(y=[None], mode='markers',
+                             marker=dict(color='yellow'),
+                             name='1 (death)',
+                             legendrank=2
+                             ))
+
+    fig.add_trace(go.Scatter(y=[None], mode='markers',
+                             marker=dict(color='darkblue'),
+                             name='0 (no death)',
+                             legendrank=1
+                             ))
+
     Age_input = np.array(new_input_arr[0][0])
-    Ejection_input =np.array(new_input_arr[0][4])
+    Ejection_input = np.array(new_input_arr[0][4])
     Time_input = np.array(new_input_arr[0][11])
-    Serum_input =np.array(new_input_arr[0][8])
+    Serum_input = np.array(new_input_arr[0][8])
+    new_preds = model.predict(new_input_arr)[0]	
 
-    fig.add_trace(
-    go.Scatter(
-        x=Age_input,
-        y=Ejection_input,
-        mode='markers', name="Scatter Plot1",
-        marker=dict(
-            color=heart_group2['DEATH_EVENT'],size=15),
-        line=dict(color="#FFCC00",width=1)),
-        row=1, col=1
-    )
+    if new_preds == 0:
+        fig.add_trace(
+        go.Scatter(
+            x=Age_input,
+            y=Ejection_input,
+            mode='markers', name="Scatter Plot 1",
+            marker=dict(
+                color="darkblue",size=15),
+            line=dict(color="#FFCC00",width=1),legendrank=3),
+            row=1, col=1
+        )
 
-    fig.add_trace(
+        fig.add_trace(
         go.Scatter(
             x=Time_input,
             y=Serum_input,
-            mode='markers', name="Scatter Plot2",
+            mode='markers', name="Scatter Plot 2",
             marker=dict(
-                color=heart_group2['DEATH_EVENT'],size=15),
-            line=dict(color="red",width=1)),
+                color="darkblue",size=15),
+            line=dict(color="red",width=1),legendrank=4),
             row=1, col=2
-    )
+        )
+        
+    elif new_preds == 1:
+        fig.add_trace(
+        go.Scatter(
+            x=Age_input,
+            y=Ejection_input,
+            mode='markers', name="Scatter Plot 1",
+            marker=dict(
+                color="yellow",size=15),
+            line=dict(color="#FFCC00",width=1),legendrank=3),
+            row=1, col=1
+        )
+
+        fig.add_trace(
+        go.Scatter(
+            x=Time_input,
+            y=Serum_input,
+            mode='markers', name="Scatter Plot 2",
+            marker=dict(
+                color="yellow",size=15),
+            line=dict(color="red",width=1),legendrank=4),
+            row=1, col=2
+        )
 
     # Update xaxis properties
     fig.update_xaxes(title_text="Age", row=1, col=1)
