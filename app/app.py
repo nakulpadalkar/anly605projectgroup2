@@ -28,7 +28,7 @@ app = Flask(__name__)
 def hello_world():
     request_type_str = request.method
     if request_type_str=='GET':
-        return render_template("index.html",href="static/attempt1.svg")
+        return render_template("index.html",href="static/baseimage.svg")
     else:
         text = request.form['text']
         random_string = uuid.uuid4().hex
@@ -54,7 +54,7 @@ def hello_world():
         return render_template("index.html",href=path)
 
 
-def plot_graphs(model,new_input_arr):
+def plot_graphs(model, new_input_arr, output_file):
     heart_group2 = pd.read_csv('heart_failure_clinical_records_dataset.csv', header = 0)
     fig = plotly.subplots.make_subplots(
     rows=1, cols=2
@@ -114,7 +114,6 @@ def plot_graphs(model,new_input_arr):
     # fig.update_yaxes(title_text="yaxis 2 title", range=[40, 80], row=1, col=2)
     # Update title and height
     fig.update_layout(height=400, width=800, title_text="Variation in Heart Disease Death Rate")
-    output_file="static/final.svg"
     fig.write_image(output_file,width=1200,engine="kaleido")
     fig.show()
 
