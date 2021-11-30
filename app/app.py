@@ -42,7 +42,10 @@ def hello_world():
         # Split the data frame
         X_train_group2, X_test_group2, y_train_group2, y_test_group2 = train_test_split(x, y, test_size=0.1, random_state=8281)
         
-
+        # Load the model with details
+        files = [f for f in os.listdir('.') if os.path.isfile(f)]
+        for f in files:
+          print(f)
         np_arr = floatsome_to_np_array(text)
         pkl_filename="TrainedModel/pickle.pkl"
         with open(pkl_filename, 'rb') as file:
@@ -50,7 +53,7 @@ def hello_world():
             model = list(pickle_model.values())[0] 
             model.fit(X_train_group2,y_train_group2)
 
-        plot_graphs(model=model,new_input_arr=np_arr,output_file= path)
+        plot_graphs(model=model,new_input_arr=np_arr,output_file=path)
         return render_template("index.html",href=path)
 
 
@@ -64,7 +67,7 @@ def plot_graphs(model, new_input_arr, output_file):
         go.Scatter(x=heart_group2["age"],y=heart_group2['time'],mode='markers',
         marker=dict(
                 color=heart_group2['DEATH_EVENT']),
-            line=dict(color="#003366",width=1)),
+            line=dict(color="#003366",width=1),showlegend=False),
         row=1, col=1
     )
 
@@ -72,7 +75,7 @@ def plot_graphs(model, new_input_arr, output_file):
         go.Scatter(x=heart_group2['ejection_fraction'],y=heart_group2['serum_sodium'],mode='markers',
         marker=dict(
                 color=heart_group2['DEATH_EVENT']),
-            line=dict(color="#FF6600",width=1)),
+            line=dict(color="#FF6600",width=1),showlegend=False),
         row=1, col=2
     )
 
@@ -141,7 +144,7 @@ def plot_graphs(model, new_input_arr, output_file):
         )
 
     # Update xaxis properties
-    fig.update_xaxes(title_text="Age", row=1, col=1)
+    fig.update_xaxes(title_text="Age", range=[36, 99], row=1, col=1)
     fig.update_xaxes(title_text="Time", row=1, col=2)
 
     # Update yaxis properties
