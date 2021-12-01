@@ -22,7 +22,7 @@ import plotly
 app = Flask(__name__)
 
 # @app.route("/") # Start here
-@app.route("/hello_world",methods=['GET','POST']) # We need to change the first line to include GET and POST methods
+@app.route("/",methods=['GET','POST']) # We need to change the first line to include GET and POST methods
 
 
 def hello_world():
