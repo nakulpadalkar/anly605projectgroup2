@@ -22,7 +22,7 @@ import plotly
 app = Flask(__name__)
 
 # @app.route("/") # Start here
-@app.route("/",methods=['GET','POST']) # We need to change the first line to include GET and POST methods
+@app.route("/hello_world",methods=['GET','POST']) # We need to change the first line to include GET and POST methods
 
 
 def hello_world():
@@ -43,9 +43,6 @@ def hello_world():
         X_train_group2, X_test_group2, y_train_group2, y_test_group2 = train_test_split(x, y, test_size=0.1, random_state=8281)
         
         # Load the model with details
-        files = [f for f in os.listdir('.') if os.path.isfile(f)]
-        for f in files:
-          print(f)
         np_arr = floatsome_to_np_array(text)
         pkl_filename="TrainedModel/pickle.pkl"
         with open(pkl_filename, 'rb') as file:
