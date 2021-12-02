@@ -19,7 +19,7 @@ import uuid
 import os
 import plotly.graph_objects as go
 import plotly
-app = Flask(__name__, template_folder = 'template')
+app = Flask(__name__)
 from logging import FileHandler,WARNING
 file_handler = FileHandler('errorlog.txt')
 file_handler.setLevel(WARNING)
