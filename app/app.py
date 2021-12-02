@@ -19,7 +19,10 @@ import uuid
 import os
 import plotly.graph_objects as go
 import plotly
-app = Flask(__name__)
+app = Flask(__name__, template_folder = 'template')
+from logging import FileHandler,WARNING
+file_handler = FileHandler('errorlog.txt')
+file_handler.setLevel(WARNING)
 
 # @app.route("/") # Start here
 @app.route("/",methods=['GET','POST']) # We need to change the first line to include GET and POST methods
