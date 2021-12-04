@@ -50,7 +50,7 @@ def hello_world():
             model.fit(X_train_group2,y_train_group2)
 
         plot_graphs(model=model,new_input_arr=np_arr,output_file=path)
-        return render_template("index.html",href=path[2:])
+        return render_template("index.html",href=path)
 
 
 def plot_graphs(model, new_input_arr, output_file):
