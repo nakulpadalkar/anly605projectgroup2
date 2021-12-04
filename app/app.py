@@ -43,7 +43,7 @@ def hello_world():
         
         # Load the model with details
         np_arr = floatsome_to_np_array(text)
-        pkl_filename="TrainedModel/pickle.pkl"
+        pkl_filename="app/TrainedModel/pickle.pkl"
         with open(pkl_filename, 'rb') as file:
             pickle_model = pickle.load(file)
             model = list(pickle_model.values())[0] 
