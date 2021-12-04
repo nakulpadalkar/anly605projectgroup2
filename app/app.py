@@ -31,7 +31,7 @@ def hello_world():
     else:
         text = request.form['text']
         random_string = uuid.uuid4().hex
-        path = "static/"+random_string +".svg"
+        path = "./static/"+random_string +".svg"
 
         # Load and Create Dataframe
         heart_group2 = pd.read_csv('heart_failure_clinical_records_dataset.csv', header = 0)
@@ -50,7 +50,7 @@ def hello_world():
             model.fit(X_train_group2,y_train_group2)
 
         plot_graphs(model=model,new_input_arr=np_arr,output_file=path)
-        return render_template("index.html",href=path)
+        return render_template("index.html",href=path[2:])
 
 
 def plot_graphs(model, new_input_arr, output_file):
